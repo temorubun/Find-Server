@@ -15,7 +15,7 @@ do
     ping -c 4 -w 5 $ip &> /dev/null
 
     if [ $? -eq 0 ]; then
-        echo "Server aktif: $ip"
+        echo "Server sedang aktif: $ip"
         
         # Membuka IP di browser jika server aktif
         xdg-open http://$ip &>/dev/null || firefox http://$ip &>/dev/null
