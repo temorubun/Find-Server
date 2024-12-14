@@ -17,8 +17,8 @@ do
     if [ $? -eq 0 ]; then
         echo "Server sedang aktif: $ip"
         
-        # Membuka IP di browser jika server aktif
-        xdg-open http://$ip &>/dev/null || firefox http://$ip &>/dev/null
+        # Membuka IP di browser di latar belakang agar tetap berjalan meskipun pemindaian dihentikan
+        xdg-open http://$ip &>/dev/null & || firefox http://$ip &>/dev/null &
     else
         echo "Server tidak aktif: $ip"
     fi
