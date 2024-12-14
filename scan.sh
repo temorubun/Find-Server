@@ -18,7 +18,9 @@ do
         echo "Server sedang aktif: $ip"
         
         # Membuka IP di browser di latar belakang agar tetap berjalan meskipun pemindaian dihentikan
-        xdg-open http://$ip &>/dev/null & || firefox http://$ip &>/dev/null &
+        (xdg-open http://$ip &)
+        # Jika xdg-open tidak berfungsi, gunakan firefox
+        #(firefox http://$ip &)
     else
         echo "Server tidak aktif: $ip"
     fi
